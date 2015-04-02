@@ -20,16 +20,13 @@ To login, you have to insert a record manually in simpleAccount
 db.simpleAccount.insert(
 {
     "_id" : ObjectId("551d6197cbd5baa14fa2c3cc"),
-    "@class" : "com.lateralthoughts.commons.account.SimpleAccount",
     "email" : "some@one.com",
     "password" : "7284291fb9c4581e17c34e17516128339a4473ca973367b61f562405efce527e",
     "firstName" : "Hugo",
     "lastName" : "L",
     "locked" : true,
-    "cguAccepted" : true,
     "enabled" : false,
-    "admin" : false,
-    "lastConnection" : ISODate("2015-04-02T15:34:47.768Z")
+    "admin" : false
 })
 
 user/password = some@one.com  /  password
