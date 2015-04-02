@@ -1,0 +1,39 @@
+#debug:
+management:
+  security:
+    enabled: false
+security:
+  user:
+    password: none
+zuul:
+  routes:
+    resource:
+      path: /resource/**
+      url: http://localhost:9000/resource
+    login:
+      path: /login/**
+      url: http://localhost:9999/uaa/login
+    user:
+      path: /user/**
+      url: http://localhost:9999/uaa/user
+    auth:
+      path: /auth/**
+      url: http://localhost:9999/uaa/
+spring:
+  oauth2:
+    sso:
+      home:
+        secure: false
+        path: /,/**/*.html
+    client:
+      accessTokenUri: http://localhost:8080/auth/oauth/token
+      userAuthorizationUri: http://localhost:8080/auth/oauth/authorize
+      clientId: acme
+      clientSecret: acmesecret
+    resource:
+       userInfoUri: http://localhost:9999/uaa/user
+logging:
+  level:
+    org.springframework: INFO
+    org.springframework.security: DEBUG
+    com.netflix: INFO
